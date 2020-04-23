@@ -1,0 +1,241 @@
+ABCNN3 - 1 layer LR
+who is st patty ?
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ?
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ?
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die 
+deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+[Epoch 20] MAP: 0.7126145192917447 / MRR: 0.7108062618199071
+==================================================
+max MAP: 0.7126145192917447 max MRR: 0.7108062618199071
+==================================================
+
+ABCNN3 - 2 layer LR
+who is st patty ? 
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ? 
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die 
+deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+[Epoch 20] MAP: 0.6284197643583989 / MRR: 0.6364762255012798
+==================================================
+max MAP: 0.7193757702010519 max MRR: 0.7165993562907142
+==================================================
+
+ABCNN3 - 1 layer SVM
+who is st patty ? 
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ? 
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die 
+deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+[Epoch 20] MAP: 0.62355615021522 / MRR: 0.6299226889120059
+==================================================
+max MAP: 0.7099585687272065 max MRR: 0.7116442579236981
+==================================================
+
+ABCNN3 - 2 layer SVM
+who is st patty ?
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ? 
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die 
+deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+[Epoch 20] MAP: 0.6356031360043705 / MRR: 0.6432898948331046
+==================================================
+max MAP: 0.7129132538700438 max MRR: 0.7126593833692598
+==================================================
+
+ABCNN2 - 1 layer LR
+who is st patty ? 
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water . 1 0.03566637712386812
+who are the members of the climax blues band ?
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die 
+deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+[Epoch 20] MAP: 0.6976783762533840 / MRR: 0.6957261930673619
+==================================================
+max MAP: 0.6976783762533840 max MRR: 0.6957261930673619
+==================================================
+
+ABCNN2 - 2 layer LR
+who is st patty ? 
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ? 
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die 
+deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+[Epoch 20] MAP: 0.709527190475839 / MRR: 0.706527103659273
+==================================================
+max MAP: 0.709527190475839 max MRR: 0.706527103659273
+==================================================
+
+ABCNN2 - 1 layer SVM
+who is st patty ? 
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ? 
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die 
+deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+[Epoch 20] MAP: 0.6995279173549926 / MRR: 0.6987253940575274
+==================================================
+max MAP: 0.6995279173549926 max MRR: 0.6987253940575274
+==================================================
+
+ABCNN2 - 2 layer SVM
+who is st patty ? 
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ? 
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die 
+deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+[Epoch 20] MAP: 0.702410004825818 / MRR: 0.7076416394056357
+==================================================
+max MAP: 0.702410004825818 max MRR: 0.7076416394056357
+==================================================
+
+ABCNN1 - 1 layer LR
+who is st patty ? 
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ? 
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die 
+in 2006 , proof was shot and killed during an altercation at the ccc nightclub in detroit .
+[Epoch 20] MAP: 0.6490883702713145 / MRR: 0.6590396148675015
+==================================================
+max MAP: 0.6557968939731829 max MRR: 0.668525113432521
+==================================================
+
+ABCNN1 - 1 layer SVM
+who is st patty ? 
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ? 
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die in 2006 , proof was shot and killed during an altercation at the ccc nightclub in detroit .
+[Epoch 20] MAP: 0.6453616723679646 / MRR: 0.6545556238457473
+==================================================
+max MAP: 0.6503264699070797 max MRR: 0.663860310928212
+==================================================
+
+ABCNN1 - 2 layer LR
+who is st patty ? 
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ?
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die 
+deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+[Epoch 20] MAP: 0.6352950240361043 / MRR: 0.645460732980862
+==================================================
+max MAP: 0.6796591410508728 max MRR: 0.6884243022157253
+==================================================
+
+ABCNN1 - 2 layer SVM
+who is st patty ? 
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ? 
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die
+deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+[Epoch 20] MAP: 0.6361163951033233 / MRR: 0.6471000341007604
+==================================================
+max MAP: 0.6757270541529802 max MRR: 0.6827977463779933
+==================================================
+
+BCNN - 2 layer LR
+who is st patty ? 
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ? 
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die 
+deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+[Epoch 20] MAP: 0.6448303190384088 / MRR: 0.6591432116123475
+==================================================
+max MAP: 0.6510566209234175 max MRR: 0.6641459551771827
+==================================================
+
+BCNN - 2 layer SVM
+who is st patty ? 
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ? 
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die 
+deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+[Epoch 20] MAP: 0.6413888730815306 / MRR: 0.6567048520752226
+==================================================
+max MAP: 0.6493646812360265 max MRR: 0.6622141804240569
+==================================================
+
+BCNN - 1 layer LR
+who is st patty ? 
+it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+when was pokemon first started 
+is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+what does alkali do to liquids ? 
+some authors also define an alkali as a base that dissolves in water .
+who are the members of the climax blues band ? 
+the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+when did proof die 
+in 2006 , proof was shot and killed during an altercation at the ccc nightclub in detroit .
+[Epoch 20] MAP: 0.6405221850803401 / MRR: 0.6517693933385943
+==================================================
+max MAP: 0.6498818245318789 max MRR: 0.6592214712585085
+==================================================
+
+
+
