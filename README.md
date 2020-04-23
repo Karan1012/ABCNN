@@ -1,113 +1,475 @@
+# AML-Fall-2019
+Project repository/page for CS5824/ECE5424 - Advanced Machine Learning project. 
 
-# ABCNN: Attention-Based Convolutional Neural Network for Modeling Sentence Pairs
+This page lists down the observations and results performed as a part of the project under **CS5824/ECE5424 Advanced Machine Learning** in Fall 2019 under *Prof. Dr. Bert Huang*. This project attempts to reproduce a finding from a Machine Learning Research study and present the results of the same.
 
-#### [Update]: Someone has reported me that the problem of a loss being 'nan' can be attributed to tf.sqrt function which outpus 'nan' when its input is very small or negative. Therefore, I recommend you modify tf.sqrt functions adequately if you have in the trouble.
+## ABCNN: Attention-Based Convolutional Neural Network for Modelling Sentence Pairs
+The [paper](https://arxiv.org/pdf/1512.05193.pdf) asserts that Attention-Based Convolutional Neural Networks (CNNs) perform better than CNNs without attention mechanisms. The paper integrated attention into CNNs for sentence pair modelling. Sentence pair modelling is a critical task in many Natural Language Processing (NLP) tasks such as Answer Selection, Paraphrase Identification and Textual Entailment. The experiments were performed for these three tasks. For this project, we are going to focus on Answer Selection.
 
-#### \[Warning\]: Some people have reported that there are some bugs that losses go to NaN in case of ABCNN-2 and 3. (I don't know the exact condition where the bugs appear.) Unfortunately, I have no plan to revise the code around the corner. Please be careful when using the code or please send me the pull requests when your revised version of the code works properly. Thanks.
+## Background
 
-This is the implementation of **ABCNN**, which is proposed by [Wenpeng Yin et al.](https://arxiv.org/pdf/1512.05193.pdf), on **Tensorflow**.  
-It includes all 4 models below:
+Modeling a pair of sentences is a critical task for many NLP applications. 
+<need to edit> 
+s0 how much did Waterboy gross?
+s1+ the movie earned $161.5 million
+s1- this was Jerry Reed’s final film appearance
+For AS, correctly answering s0 requires attention on “gross”: s1+ contains a corresponding unit (“earned”) while s1- does not.
+
+
+
+## Setup
+
+The experiments were run on a Windows Machine using Python with the following specifications -
+
+1. Windows 10 Predator PH315-52/64-bit/i7/32GB RAM 
+2. Python 3.7.4
+3. tensorflow == 1.14.0
+4. numpy == 1.17.4
+5. sklearn == 0.21.3
+5. [WikiQA Corpus](https://www.microsoft.com/en-us/download/details.aspx?id=52419)
+
+
+## Experiment
+In this exeriment we will be comparing performance of Attention based models with other base line models in NLP tasks such as Answer selection. For this we will be using WikiQA data-set.
+Baselines which are considered are WordCnt; WgtWordCnt; CNN-Cnt (the state-of-theart system): combination of CNN with WordCnt and WgtWordCnt. Apart from the baselines considered we have also considered two LSTM baselines Addition and A-LSTM 
+The models which we are replicating are Bi-CNN, ABCNN1, ABCNN2, ABCNN3.
+
+IN every models we will be using 2 types of classifiers that is Linear Regression and Support Vector Machines along with Adam Optimiser to further improve the test results presented in the original paper.
+
+The main focus on using Attention based model is to show its wide variety of applications in different types of NLP operations and its effectiveness. Attention-based DL systems are now applied to NLP after their success in computer vision and speech recognition.
+
+
+## Results
+
 - BCNN
 
     |               |          |   MAP   |   MRR   |
     |:-------------:|:--------:|:-------:|:-------:|
-    | BCNN(1 layer) |  Results |  0.6660 |  0.6813 |
-    |               | Baseline |  0.6629 |  0.6813 |
-    | BCNN(2 layer) |  Results |  0.6762 |  0.6871 |
-    |               | Baseline |  0.6593 |  0.6738 |
+    | BCNN(1 layer) |    LR    |  0.6498 |  0.6592 |
+    |               |   SVM    |  0.6507 |  0.6581 |
+    | BCNN(2 layer) |  LR      |  0.6510 |  0.6641 |
+    |               | SVM      |  0.6493 |  0.6622 |
 
 - ABCNN-1
 
     |                  |          |   MAP   |   MRR   |
     |:----------------:|:--------:|:-------:|:-------:|
-    | ABCNN-1(1 layer) |  Results |  0.6652 |  0.6755 |
-    |                  | Baseline |  0.6810 |  0.6979 |
-    | ABCNN-1(2 layer) |  Results |  0.6702 |  0.6838 |
-    |                  | Baseline |  0.6855 |  0.7023 |
+    | ABCNN-1(1 layer) |  LR |  0.6557 |  0.6685 |
+    |                  | SVM |  0.6503 |  0.6638 |
+    | ABCNN-1(2 layer) |  LR |  0.6796 |  0.6884 |
+    |                  | SVM |  0.6757 |  0.6827 |
 
 - ABCNN-2
 
     |                  |          |   MAP   |   MRR   |
     |:----------------:|:--------:|:-------:|:-------:|
-    | ABCNN-2(1 layer) |  Results |  0.6660 |  0.6813 |
-    |                  | Baseline |  0.6885 |  0.7023 |
-    | ABCNN-2(2 layer) |  Results |  ------ |  ------ |
-    |                  | Baseline |  0.6879 |  0.7068 |
+    | ABCNN-2(1 layer) |  LR |  0.6976 |  0.6957 |
+    |                  | SVM |  0.6995 |  0.6987 |
+    | ABCNN-2(2 layer) |  LR |  0.7095 |  0.7065 |
+    |                  | SVM |  0.7024 |  0.7076 |
 
 - ABCNN-3
 
     |                  |          |   MAP   |   MRR   |
     |:----------------:|:--------:|:-------:|:-------:|
-    | ABCNN-3(1 layer) |  Results |  0.6612 |  0.6682 |
-    |                  | Baseline |  0.6914 |  0.7127 |
-    | ABCNN-3(2 layer) |  Results |  0.6571 |  0.6722 |
-    |                  | Baseline |  0.6921 |  0.7105 |
+    | ABCNN-3(1 layer) |  LR |  0.7126 |  0.7108 |
+    |                  | SVM |  0.7099 |  0.7116 |
+    | ABCNN-3(2 layer) |  LR |  0.7193 |  0.7165 |
+    |                  | SVM |  0.7129 |  0.7126 |
+    
+Below are a few examples results from different networks.
 
-### Note:
-- Implementation is now only focusing on AS task with [WikiQA](https://www.microsoft.com/en-us/research/publication/wikiqa-a-challenge-dataset-for-open-domain-question-answering/) corpus.
-(I originally tried to deal with PI task with [MSRP(Microsoft Research Paraphrase)](https://www.microsoft.com/en-us/download/details.aspx?id=52398) corpus
-but it seems that model doesn't work without external features classifier requires.)
-- My code has verified that **BCNN works fine as the authors proposed.** (watched even better results than the paper's.)
--  In the case of ABCNNs, results are inferior to ones in the paper but somewhat competitive. Careful hyperparameter configuration and detailed re-examination may help to achieve optimized results.
-- I doubt that there are some bugs on ABCNNs(especially ABCNN-2 which has 2 conv layers) and will keep watching codes. Please be careful when using the results.
+**BCNN - 2 layer LR**
 
-## Specification
-- **preprocess.py**: preprocess (training, test) data and import word2vec to use.
-- **train.py**: train a model with configs.
-- **test.py**: test the trained model.
-- **ABCNN.py**: Implementation of ABCNN models.
-- show.py: pyplot codes for test results.
-- utils.py: common util functions.
-- MSRP_Corpus: MSRP corpus for PI.
-- WikiQA_Corpus: WikiQA corpus for AS.
-- models: saved models available on Tensorflow.
-- experiments: test results on AS tasks.
+Q- who is st patty ? 
 
-## Development Environment
-- OS: Windows 10 (64 bit)
-- Language: Python 3.5.3
-- CPU: Intel Xeon CPU E3-1231 v3 3.4 GHz
-- RAM: 16GB
-- GPU support: GTX 970
-- Libraries:
-    - **tensorflow 1.2.1**
-    - numpy 1.12.1
-    - gensim 1.0.1
-    - NLTK 3.2.2
-    - scikit-learn 0.18.1
-    - matplotlib 2.0.0
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
 
-## Requirements
+Q- when was pokemon first started 
 
-This model is based on pre-trained Word2vec([GoogleNews-vectors-negative300.bin](https://drive.google.com/uc?id=0B7XkCwpI5KDYNlNUTTlSS21pQmM&export=download)) by T.Mikolov et al.  
-You should download this file and place it in the root folder.
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ? 
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; 
+drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and 
+actor from detroit , michigan .
+
+**BCNN - 2 layer SVM**
+
+Q- who is st patty ? 
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ? 
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; 
+drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and 
+actor from detroit , michigan .
+
+**BCNN - 1 layer LR**
+
+Q- who is st patty ? 
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ? 
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; 
+drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- in 2006 , proof was shot and killed during an altercation at the ccc nightclub in detroit .
+
+**BCNN - 1 layer SVM**
+
+Q- who is st patty ? 
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ?
+
+A- some authors also define an alkali as a base that dissolves in water . 1 -0.9740697249362577
+
+Q- who are the members of the climax blues band ? 
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; 
+drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and 
+actor from detroit , michigan .
+
+**ABCNN1 - 2 layer LR**
+
+Q- who is st patty ? 
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ?
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; 
+drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and 
+actor from detroit , michigan .
+
+**ABCNN1 - 2 layer SVM**
+
+Q- who is st patty ? 
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ? 
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; 
+drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die
+
+A- deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and 
+actor from detroit , michigan .
+
+**ABCNN1 - 1 layer LR**
+
+Q- who is st patty ? 
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ? 
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; 
+drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- in 2006 , proof was shot and killed during an altercation at the ccc nightclub in detroit .
+
+**ABCNN1 - 1 layer SVM**
+
+Q- who is st patty ? 
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ? 
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; 
+drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- in 2006 proof was shot and killed during an altercation at the ccc nightclub in detroit .
+
+**ABCNN2 - 2 layer LR**
+
+Q- who is st patty ? 
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ? 
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; 
+drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+
+**ABCNN2 - 2 layer SVM**
+
+Q- who is st patty ? 
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ? 
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+
+**ABCNN2 - 1 layer LR**
+
+Q- who is st patty ? 
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ?
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; 
+drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and 
+actor from detroit , michigan .
+
+**ABCNN2 - 1 layer SVM**
+
+Q- who is st patty ? 
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ? 
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; 
+drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and 
+actor from detroit , michigan .
+
+**ABCNN3 - 2 layer LR**
+
+Q- who is st patty ? 
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ? 
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; 
+drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan.
+
+**ABCNN3 - 2 layer SVM**
+
+Q- who is st patty ?
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ? 
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+
+**ABCNN3 - 1 layer LR**
+
+Q- who is st patty ?
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ?
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ?
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; 
+drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan.
+
+**ABCNN3 - 1 layer SVM**
+
+Q- who is st patty ? 
+
+A- it is named after saint patrick ( ad 385–461 ) , the most commonly recognised of the patron saints of ireland .
+
+Q- when was pokemon first started 
+
+A- is a media franchise published and owned by japanese video game company nintendo and created by satoshi tajiri in 1996 .
+
+Q- what does alkali do to liquids ? 
+
+A- some authors also define an alkali as a base that dissolves in water .
+
+Q- who are the members of the climax blues band ? 
+
+A- the original members were guitarist/vocalist peter haycock , guitarist derek holt ; keyboardist arthur wood ; bassist richard jones ; drummer george newsome ; and lead vocalist and saxophonist colin cooper .
+
+Q- when did proof die 
+
+A- deshaun dupree holton ( october 2 , 1973 – april 11 , 2006 ) , better known by his stage name proof , was an american rapper and actor from detroit , michigan .
+
+## Conclusion
+The author of paper concludes that in Answer Selection the non-attention network BCNN already performs better than the baselines. Attention-based CNNs perform better than CNNs without attention mechanisms. For CNNs, they have test one (one-conv) and two (two-conv)
+convolution-pooling blocks. The ABCNN-2 generally outperforms the  ABCNN-1 and the ABCNN3 surpasses both because, when combine the ABCNN-1 and the ABCNN-2 to form the ABCNN-3, as ability to take attention of finer-grained granularity into consideration in each convolution-pooling block. But, Due to the limited size of training data, increasing the number of convolutional layers did not show any significant improvement in the performance.
+
+From our results we can conclude that attention based definitely provide better results in an NLP model we had data from many different papers to compare the performance of attention-based models with other models like LSTM, Addition and a few other baseline models and attention-based models outperforms all other models.
+
+Comparing performance of Attention based models with other baselines.
+
+    |               |  MAP   |   MRR   |
+    |:-------------:|:------:|:-------:|
+    |   ABCNN       | 0.7193 |  0.7165 |
+    |  A-LSTM       | 0.6381 |  0.6537 |
+    |  WordCnt      | 0.4891 |  0.4924 |
+    |  WgtWordCnt   | 0.5099 |  0.5132 |
+    |  CNN-Cnt      | 0.6520 |  0.6652 |
+    |  Addition     | 0.5888 |  0.5929 |
+We can see how ABCNN outperforms every other model also for a few attention-based models, performance of our model is better that what is presented in the paper.
+
+## Papers
 
 
-## Execution
-> (training): python train.py --lr=0.08 --ws=4 --l2_reg=0.0004 --epoch=20 --batch_size=64 --model_type=BCNN --num_layers=2 --data_type=WikiQA
 
-    Paramters
-    --lr: learning rate
-    --ws: window_size
-    --l2_reg: l2_reg modifier
-    --epoch: epoch
-    --batch_size: batch size
-    --model_type: model type
-    --num_layers: number of convolution layers
-    --data_type: MSRP or WikiQA data
-
-> (test): python test.py --ws=4 --l2_reg=0.0004 --epoch=20 --max_len=40 --model_type=BCNN --num_layers=2 --data_type=WikiQA --classifier=LR
-
-    Paramters
-    --ws: window_size
-    --l2_reg: l2_reg modifier
-    --epoch: epoch
-    --max_len: max sentence length
-    --model_type: model type
-    --num_layers: number of convolution layers
-    --data_type: MSRP or WikiQA data
-    --classifier: Final layout classifier(model, LR, SVM)
-
-
-## MISC.
-- [Original code by the author.](https://github.com/yinwenpeng/Answer_Selection/tree/master/src)
